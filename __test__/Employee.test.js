@@ -1,39 +1,24 @@
 const Employee = require('../lib/Employee');
-jest.mock('../lib/Employee.js');
+const employee = new Employee('chloe', '10', 'chloebyrnesash@gmail.com');
 
+test('test for employee info', () => {
+    expect(employee.name).toBe('chloe');
+    expect(employee.id).toBe('10');
+    expect(employee.email).toBe('chloebyrnesash@gmail.com')
+});
 
-test('creates employee object', () => {
-    const employee = new Employee('Chloe');
-  
-    expect(employee.name).toBe('Chloe');
-    expect(employee.id.toEqual(expect.any(Number)));
-    expect(employee.email).toEqual(expect.arrayContaining([expect.any(Object)]));
+test('test if we can get name from getName()', () => {
+    expect(exployee.getName()).toBe('chloe');
+});
 
-  });
-  
-  test("gets data for employee role", () => {
-      const employee = new Employee('Chloe');
-    
-      expect(employee.getName()).toHaveProperty('name');
-      expect(employee.getId()).toHaveProperty('id');
-      expect(employee.getEmail()).toHaveProperty('email');
-      expect(employee.getRole()).toHaveProperty('role');
-    });
-  
+test('test if we can get ID from getId()', () => {
+    expect(exployee.getId()).toBe('10');
+});
 
-    test('test to get name', () => {
-        expect(employee.getName()).toBe('Chloe');
-    });
-    
-    test('test to get id', () => {
-        expect(employee.getId()).toBe('12');
-    });
-    
-    test('test to get email', () => {
-        expect(employee.getEmail()).toBe('chloe@email.com');
-    });
-    
-    test('test to get role', () => {
-        expect(employee.getRole()).toBe('Employee');
-    });
-  
+test('test if we can get email from getEmail()', () => {
+    expect(exployee.getEmail()).toBe('chloebyrnesash@gmail.com');
+});
+
+test('test if we can get role from getRole()', () => {
+    expect(exployee.getRole()).toBe('Employee');
+});

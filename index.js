@@ -1,1 +1,3 @@
 // First
+
+//getRole() // Returns 'Employee'
