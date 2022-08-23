@@ -8,17 +8,17 @@ test('test for employee info', () => {
 });
 
 test('test if we can get name from getName()', () => {
-    expect(exployee.getName()).toBe('chloe');
+    expect(employee.getName()).toBe('chloe');
 });
 
 test('test if we can get ID from getId()', () => {
-    expect(exployee.getId()).toBe('10');
+    expect(employee.getId()).toBe('10');
 });
 
 test('test if we can get email from getEmail()', () => {
-    expect(exployee.getEmail()).toBe('chloebyrnesash@gmail.com');
+    expect(employee.getEmail()).toBe('chloebyrnesash@gmail.com');
 });
 
 test('test if we can get role from getRole()', () => {
-    expect(exployee.getRole()).toBe('Employee');
+    expect(employee.getRole()).toBe('Employee');
 });

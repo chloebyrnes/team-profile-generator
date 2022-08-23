@@ -4,7 +4,7 @@ const engineer = new Engineer('chloe', '11', 'chloebyrnesash@gmail.com', 'chloeb
 test('test for engineer info', () => {
     expect(engineer.name).toBe('chloe');
     expect(engineer.id).toBe('11');
-    expect(engineere.email).toBe('chloebyrnesash@gmail.com')
+    expect(engineer.email).toBe('chloebyrnesash@gmail.com')
     expect(engineer.github)
 });
 
