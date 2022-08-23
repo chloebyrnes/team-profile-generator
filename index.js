@@ -1,10 +1,9 @@
 const inquirer = require('inquirer');
+const fs = require('fs'); //file system
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const index = require('./index')
-const fs = require('fs'); //file system
 console.log("⚫️ Hello! Please answer the following prompts to create your team. ⚫️")
 
 const questions = [ 
@@ -119,7 +118,7 @@ const promptMenu = () => {
                 buildTeam();
             
         }
-    });
+    })
 
 };
 
@@ -132,28 +131,84 @@ promptMenu(
 
 
 
-const promptEmployee = () => {
-    console.log(`🟢ADD AN EMPLOYEE🟢`);
-    return inquirer.prompt([
-        {
-            type: 'input',
-            name: 'Name',
-            message: 'What is the name of the Engineer?',
-            validate: engineerName => {
-                if (engineerName) {
-                    return true;
-                } else {
-                    console.log('Please enter the name of the Engineer.')
-                    return false;
-                }
-           }
-       }
-   ]);
-};
+// const promptEmployee = () => {
+//     console.log(`🟢ADD AN EMPLOYEE🟢`);
+//     return inquirer.prompt([
+//         {
+//             type: 'input',
+//             name: 'Name',
+//             message: 'What is the name of the Employee?',
+//             validate: employeeName => {
+//                 if (employeeName) {
+//                     return true;
+//                 } else {
+//                     console.log('Please enter the name of the Employee.')
+//                     return false;
+//                 }
+//            }
+//        }
+//    ]);
+// };
 
-//.then(answers => {
- // console.log(questions);
-    //const employee = new Employee(answers.Name, answers.Email, answers.Id, answers.Role);
-    //teamMembers.push(employee);
- //  promptMenu();
-//})
+// const promptEngineer = () => {
+//     console.log(`🟢ADD AN ENGINEER🟢`);
+//     return inquirer.prompt([
+//         {
+//             type: 'input',
+//             name: 'Name',
+//             message: 'What is the name of the Employee?',
+//             validate: employeeName => {
+//                 if (employeeName) {
+//                     return true;
+//                 } else {
+//                     console.log('Please enter the name of the Employee.')
+//                     return false;
+//                 }
+//            }
+//        }
+//    ]);
+// };
+
+
+// const promptIntern = () => {
+//     console.log(`🟢ADD AN INTERN🟢`);
+//     return inquirer.prompt([
+//         {
+//             type: 'input',
+//             name: 'Name',
+//             message: 'What is the name of the Intern?',
+//             validate: internName => {
+//                 if (internName) {
+//                     return true;
+//                 } else {
+//                     console.log('Please enter the name of the Intern.')
+//                     return false;
+//                 }
+//            }
+//        }
+//    ]);
+// };
+
+
+// const promptManager = () => {
+//     console.log(`🟢ADD A MANAGER🟢`);
+//     return inquirer.prompt([
+//         {
+//             type: 'input',
+//             name: 'Name',
+//             message: 'What is the name of the Manager?',
+//             validate: managerName => {
+//                 if (managerName) {
+//                     return true;
+//                 } else {
+//                     console.log('Please enter the name of the Manager.')
+//                     return false;
+//                 }
+//            }
+//        }
+//    ]);
+// };
+
+
+
+
