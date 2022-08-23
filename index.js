@@ -5,7 +5,7 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const index = require('./index')
 const fs = require('fs'); //file system
-console.log("🔵🔵🔵🔵 Hello! Please answer the following prompts to create your team. 🔵🔵🔵🔵")
+console.log("⚫️ Hello! Please answer the following prompts to create your team. ⚫️")
 
 const questions = [ 
     
@@ -86,13 +86,6 @@ const questions = [
 
 ]
 
-//.then(answers => {
- // console.log(questions);
-    //const employee = new Employee(answers.Name, answers.Email, answers.Id, answers.Role);
-    //teamMembers.push(employee);
- //  promptMenu();
-//})
-
 const promptMenu = () => {
     return inquirer.prompt([
         {
@@ -100,6 +93,7 @@ const promptMenu = () => {
             name: 'Menu',
             message: 'Please select which option you would like to continue with:',
             choices: [
+                'Add an Employee',
                 'Add a Manager',
                 'Add an Engineer',
                 'Add an Intern',
@@ -109,6 +103,9 @@ const promptMenu = () => {
     ])
     .then(userChoice => {
         switch (userChoice.menu) {
+            case "Add an Employee":
+                promptEmployee();
+                break;
             case "Add a Manager":
                 promptManager();
                 break;
@@ -123,23 +120,40 @@ const promptMenu = () => {
             
         }
     });
+
 };
 
-//const promptEngineer = () => {
-//    console.log(`🟢ADD AN ENGINEER🟢`);
-//    return inquirer.prompt([
-//        {
- //           type: 'input',
- //           name: 'Name',
-  //          message: 'What is the name of the Engineer?'
-   //         validate: engineerName => {
-   //             if (engineerName) {
-  //                  return true;
-   //             } else {
-  //                  console.log('Please enter the name of the Engineer.')
-   //                 return false;
-   //             }
-  //          }
-  //      }
- //   ]);
-//};
+promptMenu(
+    inquirer.prompt(questions)
+    .then(function(userInput) {
+        console.log(userInput)
+    })
+);
+
+
+
+const promptEmployee = () => {
+    console.log(`🟢ADD AN EMPLOYEE🟢`);
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'Name',
+            message: 'What is the name of the Engineer?',
+            validate: engineerName => {
+                if (engineerName) {
+                    return true;
+                } else {
+                    console.log('Please enter the name of the Engineer.')
+                    return false;
+                }
+           }
+       }
+   ]);
+};
+
+//.then(answers => {
+ // console.log(questions);
+    //const employee = new Employee(answers.Name, answers.Email, answers.Id, answers.Role);
+    //teamMembers.push(employee);
+ //  promptMenu();
+//})
