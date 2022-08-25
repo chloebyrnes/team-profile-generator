@@ -172,7 +172,7 @@ const writeFile = data => {
             console.log(err);
             return;
         }
-        console.log('Page created.')
+        console.log('🟢 SUCCESS! Page created. 🟢')
     })
 }
 

@@ -22,7 +22,9 @@ const htmlelements = function(team) {
         return `
         <div>
         ${manager.name}
+        ${manager.id}
         ${manager.email}
+        ${manager.number}
         </div>`
     }
 
@@ -30,6 +32,9 @@ const htmlelements = function(team) {
         return `
         <div>
         ${engineer.name}
+        ${engineer.id}
+        ${engineer.email}
+        ${engineer.github}
         </div>`
     }
 
@@ -37,6 +42,9 @@ const htmlelements = function(team) {
         return `
         <div>
         ${intern.name}
+        ${intern.id}
+        ${intern.email}
+        ${intern.school}
         </div>`
     }
 
