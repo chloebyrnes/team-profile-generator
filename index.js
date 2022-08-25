@@ -85,8 +85,8 @@ const promptEmployee = () => {
             name: 'Employee',
             message: 'Please select which option you would like to continue with:',
             choices: [
-                'Add an Engineer',
-                'Add an Intern'
+                'Engineer',
+                'Intern'
             ]
         },
 
@@ -111,7 +111,52 @@ const promptEmployee = () => {
             
         },
 
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter Engineers Github.',
+            when: ({employee}) => {
+                if(employee === 'Engineer'){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            
+        },
+
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Enter Interns school.',
+            when: ({employee}) => {
+                if(employee === 'Intern'){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            
+        },
+
+        {
+            type: 'list',
+            name: 'confirmaddnew',
+            message: 'Would you like to add another member?',
+            choices: [
+                'Yes',
+                'No'
+            ]
+            
+        },
+
     ])
+    .then(employeeAnswers => {
+        if(employeeAnswers.employee === 'Engineer') {
+            const newEmployee = new Engineer (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.github);
+            teamMembers.push(newEmployee)
+        }
+    })
     
     
 };
