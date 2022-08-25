@@ -1,126 +1,119 @@
 const inquirer = require('inquirer');
 const fs = require('fs'); //file system
+const path = require('path');
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const generatePage = require('./dist/generatePage');
+const generatePage = require('./src/generatePage');
 console.log("⚫️ Hello! Please answer the following prompts to create your team. ⚫️");
 
-const questions = [ 
-    
-    {
-        type: 'input',
-        name: 'Name',
-        message: 'Enter your name.',
-        validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log('Please enter your name.')
-                return false;
+const teamMembers = [];
+const promptManager = () => {
+    return inquirer.prompt([
+
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter your Managers name.',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name.')
+                    return false;
+                }
             }
-        }
-    },
+        },
 
-    {
-        type: 'input',
-        name: 'Email',
-        message: 'Enter your email address.',
-        validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log('Please enter your email.')
-                return false;
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter your ID number.',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your ID number.')
+                    return false;
+                }
             }
-        }
-    },
+        },
 
-    {
-        type: 'input',
-        name: 'Id',
-        message: 'Enter your ID number.',
-        validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log('Please enter your ID number.')
-                return false;
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address.',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email.')
+                    return false;
+                }
             }
-        }
-    },
+        },
 
-    {
-        type: 'list',
-        name: 'Role',
-        message: 'Choose your role.',
-        choices: [
-            {
-                name: 'Employee',
-            }, 
-            {
-                name: 'Engineer',
-            }, 
-            {
-                name: 'Intern',
-            },
-            {
-                name: 'Manager',
+        {
+            type: 'input',
+            name: 'number',
+            message: 'Enter your office number.',
+            validate: numberInput => {
+                if (numberInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your office number.')
+                    return false;
+                }
             }
+        },
 
-            
-        
-        ],
-        validate: roleInput => {
-            if (roleInput) {
-                return true;
-            } else {
-                console.log('Please choose your role.')
-                return false;
-            }
-        }
-        
+    ]).then(managerData => {
+        const manager = new Manager(managerData.name, managerData.id, managerData.email, managerData.number)
+        teamMembers.push(manager)
+    })
+} 
 
-    }
 
-]
 
-const promptMenu = () => {
+
+
+const promptEmployee = () => {
     return inquirer.prompt([
         {
             type: 'list',
-            name: 'Menu',
+            name: 'Employee',
             message: 'Please select which option you would like to continue with:',
             choices: [
-                'Add an Employee',
-                'Add a Manager',
                 'Add an Engineer',
-                'Add an Intern',
-                'Finish building my team'
+                'Add an Intern'
             ]
-        }
-    ])
-    // .then(userChoice => {
-    //     switch (userChoice.Menu) {
-    //         case "Add an Employee":
-    //             promptEmployee();
-    //             break;
-    //         case "Add a Manager":
-    //             promptManager();
-    //             break;
-    //         case "Add an Engineer":
-    //             promptEngineer();
-    //             break;
-    //         case "Add an Intern":
-    //             promptIntern();
-    //             break;
-    //         default:
-    //             buildTeam();
-            
-    //     }
-    // })
+        },
 
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter Employees name.'
+            
+        },
+
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter Employees ID.'
+            
+        },
+
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter Employees email.'
+            
+        },
+
+    ])
+    
+    
 };
 
 promptMenu(
@@ -130,7 +123,7 @@ promptMenu(
     })
 );
 
-promptEmployee();
-promptEngineer();
-promptManager();
-promptIntern();
+// promptEmployee();
+// promptEngineer();
+// promptManager();
+// promptIntern();
