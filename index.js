@@ -155,18 +155,31 @@ const promptEmployee = () => {
         if(employeeAnswers.employee === 'Engineer') {
             const newEmployee = new Engineer (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.github);
             teamMembers.push(newEmployee)
-        }
+        } else if (employeeAnswers.employee = 'Intern') {
+            const newEmployee = new Intern (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.school);
+            teamMembers.push(newEmployee)
+        } if(employeeAnswers.confirmaddnew === 'Yes')  return promptEmployee();
+        else if(employeeAnswers.confirmaddnew === 'No') return teamMembers;
     })
     
     
 };
 
-promptMenu(
-    inquirer.prompt(questions)
-    .then(function(userInput) {
-        console.log(userInput)
+const writeFile = data => {
+    console.log(data);
+    fs.writeFile('./dist/index.html', data, err => {
+        if(err){
+            console.log(err);
+            return;
+        }
+        console.log('Page created.')
     })
-);
+}
+
+promptManager()
+.then(promptEmployee)
+.then(teamMembers => generatePage(teamMembers))
+.then(pageHTML => writeFile(pageHTML))
 
 // promptEmployee();
 // promptEngineer();

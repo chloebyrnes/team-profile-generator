@@ -1,6 +1,6 @@
 
 
-const generatePage = data => {
+const htmlelements = function(team) {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +10,49 @@ const generatePage = data => {
     <title>Team Profile</title>
 </head>
 <body>
-    
+    ${team}
     
 </body>
 </html>
     `;
+};
+
+
+    function appendManager(manager){
+        return `
+        <div>
+        ${manager.name}
+        ${manager.email}
+        </div>`
+    }
+
+    function appendEngineer(engineer){
+        return `
+        <div>
+        ${engineer.name}
+        </div>`
+    }
+
+    function appendIntern(intern){
+        return `
+        <div>
+        ${intern.name}
+        </div>`
+    }
+
+    function generatePage(teamMembers){
+
+    
+    const teamMemberCard = [];
+    for(let i=0; i < teamMembers.length; i++){
+        const role = teamMembers[i].getRole();
+        const member = teamMembers[i]
+        if(role === 'Manager') teamMemberCard.push(appendManager(member))
+        else if (role === 'Engineer') teamMemberCard.push(appendEngineer(member))
+        else if (role === 'Intern') teamMemberCard.push(appendIntern(member))
+    }
+    return htmlelements(teamMemberCard.join(''));
+
 };
 
 module.exports = generatePage;
