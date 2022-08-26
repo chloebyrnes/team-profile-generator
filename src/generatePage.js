@@ -8,6 +8,8 @@ const htmlelements = function(team) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../src/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     
     <title>Team Profile</title>
 </head>
@@ -31,6 +33,7 @@ const htmlelements = function(team) {
 
 function appendManager(manager){
     return `
+    <div class="col-md-4">
     <div class="card">
     <div class="container">
     <h2>Manager</h2>
@@ -40,18 +43,21 @@ function appendManager(manager){
     <h4><b>Office Number: ${manager.number}</b></h4>
     </div>
     </div>
+    </div>
     `
 }
 
 function appendEngineer(engineer){
     return `
+    <div class="col-md-4">
     <div class="card">
     <div class="container">
     <h2>Engineer</h2>
     <h4><b>Name: ${engineer.name}</b></h4>
     <h4><b>Employee ID: ${engineer.id}</b></h4>
-    <h4><b>Email: <a href="mailto:${engineer.email}">${engineer.email}}</a></b></h4>
+    <h4><b>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></b></h4>
     <h4><b>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></b></h4>
+    </div>
     </div>
     </div>
     `
@@ -59,6 +65,7 @@ function appendEngineer(engineer){
 
 function appendIntern(intern){
     return `
+    <div class="col-md-4">
     <div class="card">
     <div class="container">
     <h2>Intern</h2>
@@ -66,6 +73,7 @@ function appendIntern(intern){
     <h4><b>Employee ID: ${intern.id}</b></h4>
     <h4><b>Email: <a href="mailto:${intern.email}">${intern.email}</a></b></h4>
     <h4><b>School: ${intern.school}</b></h4>
+    </div>
     </div>
     </div>
     `
