@@ -42,8 +42,8 @@ function appendManager(manager){
     <div class="col-md-4">
     <div class="card">
     <div class="container">
-    <h2>Manager</h2>
-    <h4><b>Name: ${manager.name}</b></h4></p>
+    <h2><b>${manager.name}</b></h2></p>
+    <h4><span class="badge">Manager</span></h4>
     <h4><b>Employee ID: ${manager.id}</b></h4>
     <h4><b>Email: <a href="mailto:${manager.email}">${manager.email}</a></b></h4>
     <h4><b>Office Number: ${manager.number}</b></h4>
@@ -58,8 +58,8 @@ function appendEngineer(engineer){
     <div class="col-md-4">
     <div class="card">
     <div class="container">
-    <h2>Engineer</h2>
-    <h4><b>Name: ${engineer.name}</b></h4>
+    <h2><b>${engineer.name}</b></h2>
+    <h4><span class="badge">Engineer</span></h4>
     <h4><b>Employee ID: ${engineer.id}</b></h4>
     <h4><b>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></b></h4>
     <h4><b>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></b></h4>
@@ -74,8 +74,8 @@ function appendIntern(intern){
     <div class="col-md-4">
     <div class="card">
     <div class="container">
-    <h2>Intern</h2>
-    <h4><b>Name: ${intern.name}</b></h4>
+    <h2><b>${intern.name}</b></h2>
+    <h4><span class="badge">Intern</span></h4>
     <h4><b>Employee ID: ${intern.id}</b></h4>
     <h4><b>Email: <a href="mailto:${intern.email}">${intern.email}</a></b></h4>
     <h4><b>School: ${intern.school}</b></h4>
