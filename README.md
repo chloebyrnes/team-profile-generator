@@ -1,4 +1,4 @@
-﻿## Team Profile Generator
+### Team Profile Generator
 
 ## Description
 This is a NODE.JS command line application. By using the command line, you will be prompted with questions about your employees for your Software Engineering team. After you enter in the general info about your employees, an HTML page will be generated that displays your input.
