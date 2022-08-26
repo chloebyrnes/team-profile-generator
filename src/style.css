@@ -9,6 +9,17 @@ html {
     overflow: hidden;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 5px;
+  font-weight: 400;
+}
 
   .card {
     /* Add shadows to create the "card" effect */
@@ -28,4 +39,9 @@ html {
 
   * {
     box-sizing: border-box;
+}
+
+footer {
+  text-align: center;
+  letter-spacing: 5px;
 }
