@@ -11,6 +11,9 @@ Enter in the following command into your terminal:
 
 From there, follow the prompts to create your HTML page.
 
+## Built With
+Node.js, JavaScript, HTML, CSS, Inquirer
+
 
 ## Screenshot
 ![127 0 0 1_5500_dist_index html (1)](https://user-images.githubusercontent.com/107075274/186978901-8e157130-f474-4842-9f9b-94be0daa0a57.png)
@@ -18,3 +21,7 @@ From there, follow the prompts to create your HTML page.
 
 
 ## Video Tutorial
+
+
+https://user-images.githubusercontent.com/107075274/186981684-f31f4648-162a-4839-bc56-bc6096a41760.mp4
+
