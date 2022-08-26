@@ -28,25 +28,6 @@ const htmlelements = function(team) {
         </div>`
     }
 
-    function appendEngineer(engineer){
-        return `
-        <div>
-        ${engineer.name}
-        ${engineer.id}
-        ${engineer.email}
-        ${engineer.github}
-        </div>`
-    }
-
-    function appendIntern(intern){
-        return `
-        <div>
-        ${intern.name}
-        ${intern.id}
-        ${intern.email}
-        ${intern.school}
-        </div>`
-    }
 
     function generatePage(teamMembers){
 

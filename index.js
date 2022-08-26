@@ -82,7 +82,7 @@ const promptEmployee = () => {
     return inquirer.prompt([
         {
             type: 'list',
-            name: 'Employee',
+            name: 'employee',
             message: 'Please select which option you would like to continue with:',
             choices: [
                 'Engineer',
