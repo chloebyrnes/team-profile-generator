@@ -23,5 +23,9 @@ Node.js, JavaScript, HTML, CSS, Inquirer
 ## Video Tutorial
 
 
-https://user-images.githubusercontent.com/107075274/186981684-f31f4648-162a-4839-bc56-bc6096a41760.mp4
+
+
+https://user-images.githubusercontent.com/107075274/187278095-4966e9d8-cc78-4e3d-8800-965400d39499.mp4
+
+
 
